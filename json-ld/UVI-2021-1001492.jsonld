@@ -1,0 +1,66 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vulnpub": "https://vulnpub.dereferenced.org/",
+        "id": "vulnpub:id",
+        "modified": {
+            "@id": "vulnpub:modified",
+            "@type": "xsd:dateTime"
+        },
+        "published": {
+            "@id": "vulnpub:published",
+            "@type": "xsd:dateTime"
+        },
+        "withdrawn": {
+            "@id": "vulnpub:withdrawn",
+            "@type": "xsd:dateTime"
+        },
+        "aliases": "vulnpub:aliases",
+        "related": "vulnpub:related",
+        "package": "vulnpub:package",
+        "ecosystem": {
+            "@id": "vulnpub:ecosystem",
+            "@type": "@id"
+        },
+        "name": {
+            "@id": "http://schema.org/name",
+            "@type": "xsd:string"
+        },
+        "summary": {
+            "@id": "http://schema.org/abstract",
+            "@type": "xsd:string"
+        },
+        "details": {
+            "@id": "http://schema.org/description",
+            "@type": "xsd:string"
+        },
+        "affects": "vulnpub:affects",
+        "ranges": "vulnpub:ranges",
+        "type": "@type",
+        "repo": "vulnpub:repo",
+        "introduced": "vulnpub:introduced",
+        "fixed": "vulnpub:fixed",
+        "versions": {
+            "@id": "http://schema.org/version",
+            "@type": "xsd:string"
+        },
+        "references": {
+            "@id": "http://schema.org/url",
+            "@type": "@id"
+        },
+        "ecosystem_specific": "vulnpub:ecosystem_specific",
+        "database_specific": "vulnpub:database_specific"
+    },
+    "@id": "https://raw.githubusercontent.com/cloudsecurityalliance/uvi-database/main/2021/1001xxx/UVI-2021-1001492.json",
+    "id": "UVI-2021-1001492",
+    "modified": "2021-08-03T02:57:46.955158Z",
+    "published": "2021-08-03T02:57:46.955158Z",
+    "ecosystem": "Linux",
+    "name": "Kernel",
+    "summary": "atm: iphase: fix possible use-after-free in ia_module_exit()",
+    "details": "atm: iphase: fix possible use-after-free in ia_module_exit()\n\nThis is an automated ID intended to aid in discovery of potential security vulnerabilities. The actual impact and attack plausibility have not yet been proven.\nThis ID is fixed in Linux Kernel version v4.4.276 by commit 9e161687855175334ca93c6c3ccb221731194479. For more details please see the references link.",
+    "fixed": "9e161687855175334ca93c6c3ccb221731194479",
+    "references": [
+        "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=9e161687855175334ca93c6c3ccb221731194479"
+    ]
+}
