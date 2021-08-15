@@ -1,0 +1,63 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "uvi": "https://universalvulnerabilityidentifier.org/",
+        "id": "uvi:id",
+        "modified": {
+            "@id": "uvi:modified",
+            "@type": "xsd:dateTime"
+        },
+        "published": {
+            "@id": "uvi:published",
+            "@type": "xsd:dateTime"
+        },
+        "aliases": "uvi:aliases",
+        "related": "uvi:related",
+        "package": "uvi:package",
+        "ecosystem": {
+            "@id": "http://schema.org/name",
+            "@type": "xsd:string"
+        },
+        "name": {
+            "@id": "http://schema.org/name",
+            "@type": "xsd:string"
+        },
+        "summary": {
+            "@id": "http://schema.org/abstract",
+            "@type": "xsd:string"
+        },
+        "details": {
+            "@id": "http://schema.org/description",
+            "@type": "xsd:string"
+        },
+        "affects": "uvi:affects",
+        "ranges": "uvi:ranges",
+        "type": "@type",
+        "repo": {
+            "@id": "http://schema.org/url",
+            "@type": "@id"
+        },
+        "introduced": "uvi:introduced",
+        "fixed": "uvi:fixed",
+        "versions": {
+            "@id": "http://schema.org/version",
+            "@type": "xsd:string"
+        },
+        "references": {
+            "@id": "http://schema.org/url",
+            "@type": "@id"
+        },
+        "cve": {
+            "@id": "https://schema.org/DataFeedItem",
+            "@type": "@id"
+        }
+    },
+    "@id": "https://raw.githubusercontent.com/cloudsecurityalliance/uvi-database/main/2021/1001xxx/UVI-2021-1001492.json",
+    "id": "UVI-2021-38208",
+    "cve": "https://services.nvd.nist.gov/rest/json/cve/1.0/CVE-2021-38208",
+    "modified": "2021-08-15T20:53:00Z",
+    "published": "2021-08-15T20:53:00Z",
+    "ecosystem": "Linux",
+    "name": "Kernel",
+    "fixed": "4ac06a1e013cf5fdd963317ffd3b968560f33bba"
+}
