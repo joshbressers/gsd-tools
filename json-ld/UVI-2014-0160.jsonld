@@ -1,0 +1,83 @@
+{
+    "@id": "https://raw.githubusercontent.com/cloudsecurityalliance/uvi-database/main/2014/0xxx/UVI-2014-0160.json",
+    "id": "UVI-2014-0160",
+    "cve": "https://services.nvd.nist.gov/rest/json/cve/1.0/CVE-2014-0160",
+    "summary": "OpenSSL Heartbleed vulnerability",
+    "details": "The (1) TLS and (2) DTLS implementations in OpenSSL 1.0.1 before 1.0.1g do not properly handle Heartbeat Extension packets, which allows remote attackers to obtain sensitive information from process memory via crafted packets that trigger a buffer over-read, as demonstrated by reading private keys, related to d1_both.c and t1_lib.c, aka the Heartbleed bug.",
+    "modified": "2014-04-07T22:55Z",
+    "published": "2014-04-07T22:55Z",
+    "affected": [ {
+        "package": {
+            "ecosystem": "openssl",
+            "name": "openssl",
+        },
+        "ranges": [ {
+            "type": "GIT",
+            "repo": "git://git.openssl.org/openssl.git",
+            "events": [ {
+                "introduced": "4817504d069b4c5082161b02a22116ad75f822b1",
+                "fixed": "96db9023b881d7cd9f379b0c154650d6c108e9a3"
+            } ]
+        } ],
+        "bug_framework": [
+            {
+                "class": "MAD",
+                "type": "Reposition",
+                "cause": {
+                    "type": "Improper Object",
+                    "value": "Wrong Size Used"
+                },
+                "attributes": {
+                    "mechanism": "Suquential",
+                    "source_code": "Codebase",
+                    "execution_space": "Userland",
+                    "pointer_span": "Huge",
+                    "object_location": "Heap"
+                },
+                "consequence": {
+                    "type": "Improper Pointer",
+                    "value": "Over Bounds"
+                }
+            },
+            {
+                "class": "MUS",
+                "type": "Clear",
+                "cause": {
+                    "type": "Improper Operation",
+                    "value": "Missing"
+                },
+                "attributes": {
+                    "mechanism": "Suquential",
+                    "source_code": "Codebase",
+                    "execution_space": "Userland",
+                    "pointer_span": "Huge",
+                    "object_location": "Heap"
+                },
+                "consequence": {
+                    "type": "Memory Error",
+                    "value": "Not Cleared Object"
+                }
+            },
+            {
+                "class": "MUS",
+                "type": "Read",
+                "cause": {
+                    "type": "Improper Pointer",
+                    "value": "Over Bounds"
+                },
+                "attributes": {
+                    "mechanism": "Suquential",
+                    "source_code": "Codebase",
+                    "execution_space": "Userland",
+                    "pointer_span": "Huge",
+                    "object_location": "Heap"
+                },
+                "consequence": {
+                    "type": "Memory Error",
+                    "value": "Buffer Overflow"
+                }
+            }
+
+        ]
+    } ],
+}
