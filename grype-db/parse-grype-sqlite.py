@@ -102,7 +102,10 @@ def main():
 
         #if vuln_id.split('0')[0]
 
-        print(vuln_id.split('-')[0])
+        #print(vuln_id.split('-')[0])
+
+        if vuln_id.split('-')[0] == '0':
+            print(vuln)
         continue
 
         if vuln_id not in vulns:
@@ -207,8 +210,6 @@ def main():
 
 
     con.close()
-
-    print(len(vulns.keys()))
 
 if __name__ == '__main__':
     main()
