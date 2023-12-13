@@ -19,6 +19,9 @@ class CVE:
         else:
             self.json = { "namespaces": {} }
 
+        if not "namespaces" in self.json:
+            self.json["namespaces"] = {}
+
     def add_data(self, namespace, data):
         # Add data to a namespace
 
@@ -35,9 +38,9 @@ class CVE:
                 self.json['GSD']['alias'] = self.id
 
             # Check for a description
-            if 'description' not in self.json['GSD']:
-                if '** RESERVED **' not in self.json['namespaces']['cve.org']['description']['description_data'][0]['value']:
-                    self.json['GSD']['description'] = self.json['namespaces']['cve.org']['description']['description_data'][0]['value']
+            #if 'description' not in self.json['GSD']:
+            #    if '** RESERVED **' not in self.json['namespaces']['cve.org']['description']['description_data'][0]['value']:
+            #        self.json['GSD']['description'] = self.json['namespaces']['cve.org']['description']['description_data'][0]['value']
 
 
     def write(self):

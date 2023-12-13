@@ -13,8 +13,8 @@ def main():
         sys.exit(1)
 
     namespace = sys.argv[3]
-    dwf_path = sys.argv[2]
-    data_path = sys.argv[1]
+    dwf_path = sys.argv[2] # cvelist
+    data_path = sys.argv[1] # gsd-database
     securitylist.CVE.path = data_path
 
     dwf_files = []
@@ -31,7 +31,7 @@ def main():
     # We need to find a way to only pull in updates
 
     for f in dwf_files:
-        with open(f) as fh:
+        with open(f, 'r', errors='replace') as fh:
             print(f)
             dwf_data = json.load(fh)
 
