@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.gsd.id/gsd.id/gsd/schema.json",
+  "title": "GSD Identifier",
+  "description": "A schema for describing a GSD identifier.",
+  "type": "object",
+  "properties": {
+    "gsd": {
+      "description": "GSD data",
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "description": "Optional metadata",
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "The type of ID this is (allow for easier filtering)",
+              "enum": ["vulnerability", "concern", "documentation"]
+            },
+            "exploitCode": {
+              "description": "What level of exploit code is available for the related vulnerability",
+              "enum": ["unknown", "proof-of-concept", "functional"]
+            },
+            "remediation": {
+              "description": "What level of remediation is available for the related vulnerability",
+              "enum": ["unknown", "temporary", "workaround", "official"]
+            },
+            "reportConfidence": {
+              "description": "What level of confidence is there in the validity of this report",
+              "enum": ["unknown", "reasonable", "confirmed"]
+            }
+          }
+        },
+        "osvSchema": {
+          "description": "The first-class citizen for GSD data",
+          "$ref": "https://schema.gsd.id/gsd.id/osv-gsd/schema.json"
+        },
+        "cve4Schema": {
+          "type": "object"
+        },
+        "cve5Schema": {
+          "description": "Allows for including CVE schema data where OSV does not provide an equivalent field",
+          "$ref": "https://schema.gsd.id/cve.org/cve/schema-CVE_5.0.json"
+        }
+      },
+      "required": ["osvSchema"]
+    },
+    "namespaces": {
+      "description": "Namespaces for non-GSD data",
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["gsd"]
+}
